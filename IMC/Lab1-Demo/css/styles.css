@@ -5,10 +5,15 @@
     width: 200px;
     height: 200px;
     background: #4a90e2;
+
 }
 
-.fade {
+.fadeI {
   animation: fadeIn 2s ease-in forwards;
+}
+
+.fadeO {
+  animation: fadeIn 2s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -23,11 +28,13 @@
 
 @keyframes slideIn {
   from {
-    transform: translateX(-200px);
+    transform: translateX(-200px) translateY(-200px);
+    /* transform: ; */
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0) translateY(0);
+    /* transform: translateY(0); */
     opacity: 1;
   }
 }
