@@ -1,9 +1,3 @@
-Dưới đây là **file `README.md` đã được chuẩn hóa Markdown 100%**, hiển thị **đẹp – đúng dòng – đúng khối** trên GitHub Preview.
-👉 Thầy **copy nguyên khối** này dán vào `Readme.md` là đảm bảo Preview không còn “kỳ” nữa.
-
----
-
-````md
 ![Minh họa Animation](image.png)
 
 # 🎯 TỔNG QUAN: CÁC “ĐÒN BẨY” TẠO CHUYỂN ĐỘNG
@@ -248,13 +242,13 @@ Tạo **card sản phẩm**:
 > ⚠ `delay` chỉ áp dụng **lần đầu**
 > Muốn nghỉ giữa các vòng → dùng `keyframes` (nâng cao)
 
-## 5️⃣ Cú pháp chuẩn (RẤT NÊN DẠY)
+## 5️⃣ Cú pháp chuẩn
 
 ```css
 animation: name duration timing iteration direction;
 ```
 
-## 6️⃣ So sánh để giảng (RẤT HAY)
+## 6️⃣ So sánh để giảng
 
 | Cấu hình               | Cảm giác  |
 | ---------------------- | --------- |
@@ -276,14 +270,3 @@ animation: name duration timing iteration direction;
 * Dừng animation khi hover
 * Kết hợp JS bật / tắt animation
 
-```
-
----
-
-Nếu thầy muốn, em có thể:
-- 📘 Chuẩn hóa **toàn bộ repo Animation**
-- 🧱 Tách mỗi demo thành **folder + README riêng**
-- 🎓 Làm **bản “slide hóa” từ README** để chiếu dạy
-
-👉 Chỉ cần nói: **“Chuẩn hóa tiếp phần …”**
-```
