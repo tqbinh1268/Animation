@@ -48,7 +48,7 @@
 }
 ```
 
-### ✅ Giảng trên lớp
+### ✅ Ghi chú
 
 * Giải thích `forwards`
 * Thử đổi `1.2s → 3s`
@@ -93,7 +93,7 @@
 }
 ```
 
-### 🎓 GV nhấn mạnh
+### 🎓 Ghi chú
 
 * Thêm `opacity` → chuyển động **“có hồn”** hơn
 
@@ -129,7 +129,7 @@
 }
 ```
 
-### 📌 Giảng thêm
+### 📌 Ghi chú
 
 * `scale(1.2)` → cảm giác **“nảy”**
 * Kết hợp `ease-out`
@@ -160,7 +160,7 @@
 }
 ```
 
-### 🎓 GV mở rộng
+### 🎓 Ghi chú
 
 * Thêm `border-radius`
 * So sánh **có / không transition**
@@ -248,7 +248,7 @@ Tạo **card sản phẩm**:
 animation: name duration timing iteration direction;
 ```
 
-## 6️⃣ So sánh để giảng
+## 6️⃣ So sánh
 
 | Cấu hình               | Cảm giác  |
 | ---------------------- | --------- |
