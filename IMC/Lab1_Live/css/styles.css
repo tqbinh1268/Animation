@@ -1,0 +1,26 @@
+h1 {
+    color: brown;
+    /* background-color: blue; */
+}
+.box {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.face {
+    animation: faceIn 2s infinite;
+}
+
+@keyframes faceIn {
+    from {
+        opacity: 0;
+        background-color: rgb(39, 4, 241);
+    }
+    to {
+        opacity: 1;
+        background-color: brown;
+    }
+}
