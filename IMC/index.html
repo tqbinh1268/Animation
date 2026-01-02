@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OMG Animation Lab - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .motto {
+            font-style: italic;
+            color: #764ba2;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .card a {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .card a:hover::before {
+            left: 100%;
+        }
+
+        .card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .footer i {
+            color: #f093fb;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="omg.png" alt="OMG Logo">
+                <div class="logo-text">
+                    <h1>OMG Animation Lab</h1>
+                    <p class="motto">"Học animation vui vẻ cùng Ông Mười Giáo!"</p>
+                </div>
+            </div>
+            <div class="social">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-codepen"></i>
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-play-circle"></i></div>
+            <h2>Lab 1 - Demo</h2>
+            <p>
+                Giới thiệu các animation cơ bản: fade, move, scale.
+                Dùng để minh họa nhanh khái niệm cho sinh viên. OMG sẽ hướng dẫn từng bước!
+            </p>
+            <a href="./Lab1-Demo/index.html">Xem Demo <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
+            <h2>Lab 1 - Transition</h2>
+            <p>
+                Thực hành CSS Transition: hover, delay, easing.
+                Giúp sinh viên hiểu sự khác biệt giữa transition và animation. OMG giải thích dễ hiểu!
+            </p>
+            <a href="./Lab1_Transition/index.html">Xem Transition <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+            <h2>Lab 1 - Project</h2>
+            <p>
+                Bài tập mini project tổng hợp animation.
+                Sinh viên áp dụng vào layout thực tế. OMG sẽ review code của bạn!
+            </p>
+            <a href="./Lab1_Project/index.html">Xem Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+            <h2>Lab 1 - Live</h2>
+            <p>
+                Demo code trực tiếp trên lớp.
+                Dùng để giảng giải và chỉnh sửa animation realtime. OMG dạy live đây!
+            </p>
+            <a href="./Lab1_Live/index.html">Xem Live <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-film"></i></div>
+            <h2>Lab 2 - Keyframes</h2>
+            <p>
+                Thực hành CSS Keyframes: marquee, rotating boxes, fade-in images, blinking button, sliders, image sequences.
+                Học cách tạo animation phức tạp với keyframes. OMG sẽ chỉ cho bạn bí quyết!
+            </p>
+            <a href="./Lab2_Keyframes/index.html">Xem Keyframes <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-utensils"></i></div>
+            <h2>Lab 2 - Project</h2>
+            <p>
+                Project thực tế: Website nhà hàng Việt Nam với các animation từ Lab2.
+                Áp dụng keyframes vào layout thực tế với hero slider, menu animations, special effects. OMG thích ăn phở lắm!
+            </p>
+            <a href="./Lab2_Project/index.html">Xem Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-magic"></i></div>
+            <h2>Lab 3 - Advanced Animations</h2>
+            <p>
+                Animation nâng cao: 3D transforms, particle effects, interactive hovers, shape morphing.
+                Khám phá các kỹ thuật animation hiện đại với CSS và JavaScript. OMG sẽ làm bạn WOW!
+            </p>
+            <a href="./Lab3_Animations/index.html">Xem Advanced <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 OMG Animation Lab - "Code đẹp, animation mượt, học vui vẻ!" <i class="fas fa-heart"></i></p>
+        <p>Được tạo bởi Ông Mười Giáo với ❤️ và ☕</p>
+    </footer>
+</body>
+</html>
