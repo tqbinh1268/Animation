@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Animation IMC - Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 24px 0;
+            margin: 0;
+            background: #1e88e5;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1e88e5;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .card a {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .card a:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation IMC</h1>
+
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h2>Lab 1 - Demo</h2>
+            <p>
+                Giới thiệu các animation cơ bản: fade, move, scale. 
+                Dùng để minh họa nhanh khái niệm cho sinh viên.
+            </p>
+            <a href="./Lab1-Demo/index.html">Xem Demo</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h2>Lab 1 - Transition</h2>
+            <p>
+                Thực hành CSS Transition: hover, delay, easing.
+                Giúp sinh viên hiểu sự khác biệt giữa transition và animation.
+            </p>
+            <a href="./Lab1_Transition/index.html">Xem Transition</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <h2>Lab 1 - Project</h2>
+            <p>
+                Bài tập mini project tổng hợp animation.
+                Sinh viên áp dụng vào layout thực tế.
+            </p>
+            <a href="./Lab1_Project/index.html">Xem Project</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <h2>Lab 1 - Live</h2>
+            <p>
+                Demo code trực tiếp trên lớp.
+                Dùng để giảng giải và chỉnh sửa animation realtime.
+            </p>
+            <a href="./Lab1_Live/index.html">Xem Live</a>
+        </div>
+    </div>
+</body>
+</html>
