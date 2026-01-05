@@ -25,17 +25,20 @@ section {
 }
 
 .marquee p {
-    animation: moveText 20s linear infinite;
+    animation: moveText 10s ease-in-out infinite;
     font-size: 18px;
     margin: 0;
 }
 
 @keyframes moveText {
     from {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
+    50% {
+         transform: translateX(50%);
+        }
     to {
-        transform: translateX(-50%);
+        transform: translateX(0%);
     }
 }
 
