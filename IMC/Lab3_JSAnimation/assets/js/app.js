@@ -29,11 +29,13 @@ window.addEventListener('scroll', function() {
 const boxes = document.querySelectorAll('.box');
 
 window.addEventListener('scroll', function() {
-    boxes.forEach(box => {
+    boxes.forEach((box, index) => {
         const boxTop = box.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         if (boxTop < windowHeight - 50) {
-            box.classList.add('show');
+            setTimeout(() => {
+                box.classList.add('show');
+            }, index * 200); // Stagger by 200ms
         }
     });
 });
@@ -53,6 +55,6 @@ jumpButton.addEventListener('animationend', function() {
 const circle = document.querySelector('.circle');
 
 document.addEventListener('mousemove', function(e) {
-    circle.style.left = e.clientX - 15 + 'px';
-    circle.style.top = e.clientY - 15 + 'px';
+    circle.style.left = (e.clientX + window.scrollX - 0) + 'px';
+    circle.style.top = (e.clientY + window.scrollY + 15) + 'px';
 });
