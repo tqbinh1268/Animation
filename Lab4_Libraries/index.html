@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - Thư viện Animation (AOS, GSAP, Animate.css)</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header>
+        <h1>Lab 4: Thư viện Animation</h1>
+    </header>
+
+    <section id="hero">
+        <h2 class="hero-title animate__animated animate__bounceIn">Tiêu đề Hero - Animate.css</h2>
+        <button class="hero-cta">Nút CTA</button>
+    </section>
+
+    <section id="bai1" data-aos="fade-up">
+        <h2>Bài 1: AOS - Hiệu ứng xuất hiện khi cuộn (fade-up)</h2>
+        <p>Section 1 xuất hiện với hiệu ứng fade-up khi cuộn đến.</p>
+    </section>
+
+    <section id="bai2" data-aos="fade-up" data-aos-delay="200">
+        <h2>Bài 2: Section 2</h2>
+        <p>Section 2 xuất hiện với delay 200ms.</p>
+    </section>
+
+    <section id="bai3" data-aos="fade-up" data-aos-delay="400">
+        <h2>Bài 3: Section 3</h2>
+        <p>Section 3 xuất hiện với delay 400ms.</p>
+    </section>
+
+    <section id="bai4">
+        <h2>Bài 4: GSAP - Tween cơ bản (di chuyển & mờ dần)</h2>
+        <div class="box">Khối di chuyển và mờ dần</div>
+    </section>
+
+    <section id="bai5">
+        <h2>Bài 5: GSAP Timeline - Chuỗi hiệu ứng liên hoàn</h2>
+        <p>Timeline sẽ chạy cho header, hero title, và CTA button.</p>
+    </section>
+
+    <section id="bai6" class="animate__animated animate__fadeInUp">
+        <h2>Bài 6: Kết hợp AOS + Animate.css + GSAP</h2>
+        <div class="card-list" data-aos="fade-up">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+        </div>
+    </section>
+
+    <!-- GSAP JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
