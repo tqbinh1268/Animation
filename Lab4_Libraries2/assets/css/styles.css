@@ -1,0 +1,40 @@
+Cài đặt chung
+body { font-family: sans-serif; margin: 0; padding: 0; padding-bottom: 200px; }
+section {
+    min-height: 80vh; /* Mỗi bài cao bằng 80% màn hình để cuộn */
+    border-bottom: 2px dashed #ccc;
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* Style cho các khối Box (Bài 1, 3) */
+.container-flex { display: flex; gap: 20px; justify-content: center; }
+.box {
+    width: 100px; height: 100px;
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-weight: bold; border-radius: 8px;
+}
+.box-red { background: red; }
+.box-green { background: green; }
+.box-blue { background: blue; }
+.box-orange { background: orange; }
+
+/* Style cho Bài 3: GSAP Basic */
+.gsap-box {
+    opacity: 0; /* Ẩn trước để JS làm hiệu ứng hiện */
+    transform: translateX(-100px); /* Lệch trái 100px */
+}
+
+/* Style cho Bài 4: GSAP Timeline */
+#bai4 { background: #f0f0f0; text-align: center; }
+.header-anim { background: #333; color: white; padding: 15px; width: 100%; margin-bottom: 50px; }
+.hero-cta { padding: 10px 20px; background: tomato; color: white; border: none; font-size: 18px; cursor: pointer; }
+
+/* Style cho Bài 5: Cards */
+.card-list { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+.card {
+    width: 150px; height: 200px; background: purple; color: white;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; /* Ẩn để chờ hiệu ứng */
+    transform: translateY(50px); /* Dịch xuống dưới */
+}

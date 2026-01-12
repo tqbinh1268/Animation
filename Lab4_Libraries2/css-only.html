@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - CSS Animations Only</title>
+    <link rel="stylesheet" href="assets/css/css-only.css">
+</head>
+<body>
+
+    <section id="bai1" class="section-padding">
+        <h2>Bài 1: Hiệu ứng Fade Up (CSS Animation)</h2>
+        <div class="container-flex">
+            <div class="box box-red animate-on-scroll">Box 1</div>
+            <div class="box box-green animate-on-scroll delay-200">Box 2</div>
+            <div class="box box-blue animate-on-scroll delay-400">Box 3</div>
+        </div>
+    </section>
+
+    <section id="bai2" class="section-padding">
+        <div class="hero-text">
+            <h1 class="bounce-in">BÀI 2: CHÀO MỪNG ĐẾN WEBSITE</h1>
+            <p class="fade-in-up delay-1s">Dòng này hiện sau 1 giây</p>
+        </div>
+    </section>
+
+    <section id="bai3" class="section-padding">
+        <h2>Bài 3: Slide In (CSS Animation)</h2>
+        <div class="gsap-box box box-orange slide-in">GSAP Move</div>
+    </section>
+
+    <section id="bai4" class="section-padding">
+        <div class="header-anim fade-in-down">MENU HEADER</div>
+
+        <div class="hero-content">
+            <h2 class="hero-title fade-in-up delay-500">Nội Dung Chính</h2>
+            <button class="hero-cta scale-in delay-1000">MUA NGAY</button>
+        </div>
+    </section>
+
+    <section id="bai5" class="section-padding">
+        <h2 class="fade-in-left">Bài 5: Stagger Cards (CSS Animation)</h2>
+
+        <div class="card-list">
+            <div class="card stagger-0">Sản phẩm 1</div>
+            <div class="card stagger-200">Sản phẩm 2</div>
+            <div class="card stagger-400">Sản phẩm 3</div>
+            <div class="card stagger-600">Sản phẩm 4</div>
+        </div>
+    </section>
+
+    <script src="assets/js/css-only.js"></script>
+</body>
+</html>
