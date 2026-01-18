@@ -1,0 +1,761 @@
+/* --- 1. CÀI ĐẶT CƠ BẢN (RESET) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 2. HEADER & MENU --- */
+header {
+    background-color: #1a1a1a; /* Màu đen xám */
+    color: white;
+    padding: 16px 0;
+    position: sticky; /* Menu dính lên trên cùng khi cuộn */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #e74c3c; /* Màu đỏ rạp phim */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: #e74c3c; /* Hover đổi màu đỏ */
+}
+
+/* Nút 3 gạch (Mobile) - Mặc định ẩn trên PC */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- 3. HERO BANNER (PHẦN TO NHẤT) --- */
+.hero-banner {
+    height: 35vh;
+    /* Dùng ảnh online để đảm bảo bạn thấy hình ngay (bạn có thể thay link ảnh khác) */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 2.7rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Nút CTA (Kêu gọi hành động) */
+.btn-cta {
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Animation chữ hiện ra */
+.fade-in-text {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 4. DANH SÁCH PHIM (GRID LAYOUT) --- */
+.movie-section {
+    padding: 45px 0;
+    min-height: 65vh;
+}
+
+.grid-layout {
+    display: grid;
+    /* 4 cột trên desktop */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Card Phim */
+.movie-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px); /* Bay lên khi hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.img-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    z-index: 10;
+    padding-bottom: 20px;
+}
+
+.movie-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay .card-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 320px; /* Chiều cao cố định để ảnh đều nhau */
+    object-fit: cover; /* Cắt ảnh đẹp không bị méo */
+}
+
+.card-info {
+    padding: 16px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-info h3 {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.btn-buy {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 2px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s;
+    transform: scale(0.95);
+}
+
+.btn-buy:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-buy.glow {
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 3px #e74c3c, 0 0 6px #e74c3c; }
+    50% { box-shadow: 0 0 8px #e74c3c, 0 0 15px #e74c3c; }
+    100% { box-shadow: 0 0 3px #e74c3c, 0 0 6px #e74c3c; }
+}
+
+.btn-buy:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* --- 5. FOOTER --- */
+footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 3px solid #e74c3c;
+}
+
+/* --- 6. RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Hiện nút 3 gạch */
+    }
+
+    .menu {
+        display: none; /* Ẩn menu ngang */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .menu.active {
+        display: flex; /* Hiện menu khi có class active */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* --- PHẦN FORM ĐẶT VÉ (BOOKING STYLES) --- */
+
+/* 1. Nền và Bố cục chung */
+.booking-section {
+    padding: 60px 0;
+    min-height: 80vh; /* Chiều cao tối thiểu để đẩy footer xuống */
+    background: #f4f4f4; /* Nền xám nhạt làm nổi bật Form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.booking-header h2 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* 2. Khung chứa Form (Card trắng) */
+.form-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Đổ bóng mềm */
+    max-width: 500px; /* Giới hạn chiều rộng */
+    width: 100%;
+    margin: 0 auto; /* Căn giữa card */
+}
+
+/* 3. Các ô nhập liệu (Input) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Để nhãn nằm trên ô input */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Viền mỏng */
+    border-radius: 8px; /* Bo góc input */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    background-color: #fafafa;
+}
+
+/* Hiệu ứng khi bấm vào input */
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #e74c3c; /* Đổi màu viền sang đỏ */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+    background-color: #fff;
+}
+
+/* 4. Thông báo lỗi (Validation) */
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+    font-style: italic;
+}
+
+/* 5. Nút Submit (Xác nhận) */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #c0392b; /* Màu đậm hơn khi hover */
+    transform: translateY(-2px); /* Nảy lên nhẹ */
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-submit:active {
+    transform: scale(0.98); /* Nhấn xuống khi click */
+}
+
+/* --- TRANG CHI TIẾT PHIM (DETAIL PAGE) --- */
+.movie-detail-section {
+    padding: 60px 0;
+    background: #1a1a1a; /* Nền tối cho sang trọng */
+    color: white;
+    min-height: 80vh;
+}
+
+.detail-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Cột ảnh Poster */
+.detail-poster {
+    flex: 1;
+    max-width: 400px;
+}
+
+.detail-poster img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.5); /* Hào quang đỏ */
+    border: 2px solid #333;
+}
+
+/* Cột nội dung */
+.detail-content {
+    flex: 1.5;
+}
+
+.movie-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #e74c3c;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.movie-meta {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.tag {
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #555;
+}
+
+.tag.warning {
+    color: #f39c12;
+    border-color: #f39c12;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Nút Trailer (Nút phụ) */
+.btn-trailer {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-trailer:hover {
+    background: white;
+    color: #1a1a1a;
+}
+
+/* Responsive trang chi tiết */
+@media (max-width: 768px) {
+    .detail-grid {
+        flex-direction: column;
+    }
+    .detail-poster {
+        max-width: 70%;
+    }
+    .movie-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .btn-trailer { margin-left: 0; }
+}
+
+/* --- STYLES CHO MODAL VÉ (TICKET) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Nền tối mờ */
+    z-index: 2000;
+    display: none; /* Mặc định ẩn */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.ticket-wrapper {
+    display: flex;
+    width: 600px;
+    max-width: 90%;
+    background: transparent;
+    font-family: 'Courier New', Courier, monospace; /* Font chữ kiểu vé in */
+}
+
+/* --- PHẦN TRÁI (THÔNG TIN) --- */
+.ticket-left {
+    flex: 2;
+    background: #fff;
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    position: relative;
+    border-right: 2px dashed #333; /* Đường đứt nét ở giữa */
+}
+
+.ticket-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.ticket-body .t-label {
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+.ticket-body h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.ticket-body .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-body strong {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* --- PHẦN PHẢI (CUỐNG VÉ) --- */
+.ticket-right {
+    flex: 1;
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Tạo Mã vạch giả */
+.barcode {
+    height: 50px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        #fff 2px,
+        #fff 4px
+    );
+    margin-bottom: 10px;
+}
+
+.ticket-number {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Nút bấm trên vé */
+.btn-home {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-home:hover { background: #c0392b; }
+
+/* --- HIỆU ỨNG VẾT CẮT (NOTCH) --- */
+.notch {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #262626; /* Màu trùng với nền tối overlay (gần đúng) */
+    border-radius: 50%;
+    right: -15px; /* Để nằm giữa đường nối */
+    z-index: 10;
+}
+.notch-top { top: -15px; }
+.notch-bottom { bottom: -15px; }
+
+/* Responsive Mobile */
+@media (max-width: 600px) {
+    .ticket-wrapper { flex-direction: column; width: 85%; }
+    .ticket-left { border-right: none; border-bottom: 2px dashed #333; border-radius: 10px 10px 0 0; }
+    .ticket-right { border-radius: 0 0 10px 10px; }
+    .notch { display: none; } /* Ẩn vết cắt trên mobile cho gọn */
+}
+
+/* --- STYLES CHO MODAL VÉ (TICKET) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Nền tối mờ */
+    z-index: 2000;
+    display: none; /* Mặc định ẩn */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.ticket-wrapper {
+    display: flex;
+    width: 650px;
+    max-width: 90%;
+    font-family: 'Courier New', Courier, monospace; /* Font chữ kiểu vé in */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* --- PHẦN TRÁI (THÔNG TIN) --- */
+.ticket-left {
+    flex: 2;
+    background: #fff;
+    border-radius: 12px 0 0 12px;
+    padding: 25px;
+    position: relative;
+    border-right: 2px dashed #333; /* Đường đứt nét ở giữa (răng cưa) */
+}
+
+.ticket-header {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.ticket-body .t-label {
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 2px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.ticket-body h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.ticket-body .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.ticket-body strong {
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+}
+
+/* --- PHẦN PHẢI (CUỐNG VÉ) --- */
+.ticket-right {
+    flex: 1;
+    background: #fff;
+    border-radius: 0 12px 12px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Tạo Mã vạch giả bằng CSS */
+/* --- SỬA LẠI CLASS BARCODE ĐỂ MẤT VẠCH KẺ --- */
+.barcode {
+    height: auto;           /* Bỏ chiều cao cố định */
+    width: 100%;
+    background: none;       /* QUAN TRỌNG: Xóa bỏ nền kẻ sọc */
+    margin-bottom: 15px;
+    display: flex;          /* Căn giữa QR Code */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Đảm bảo ảnh QR Code hiển thị đẹp */
+.barcode img {
+    max-width: 100%;
+    border: 5px solid white; /* Tạo viền trắng cho dễ nhìn */
+}
+
+.ticket-number {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Nút bấm trên vé */
+.btn-home {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.btn-home:hover { background: #c0392b; }
+
+/* --- HIỆU ỨNG VẾT CẮT (NOTCH) --- */
+/* Đây là phần làm cho vé lõm vào 2 đầu */
+.notch {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #222; /* Màu trùng với nền tối bên ngoài */
+    border-radius: 50%;
+    right: -15px; /* Để nằm giữa đường nối */
+    z-index: 10;
+}
+.notch-top { top: -15px; }
+.notch-bottom { bottom: -15px; }
+
+/* Responsive Mobile */
+@media (max-width: 600px) {
+    .ticket-wrapper { flex-direction: column; width: 85%; }
+    .ticket-left { border-right: none; border-bottom: 2px dashed #333; border-radius: 10px 10px 0 0; }
+    .ticket-right { border-radius: 0 0 10px 10px; padding: 30px; }
+    .notch { display: none; } /* Ẩn vết cắt trên mobile cho gọn */
+}

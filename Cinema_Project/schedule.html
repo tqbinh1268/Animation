@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cập nhật lịch chiếu phim mới nhất tại Cinema Poly">
+    <title>Cinema Poly - Lịch Chiếu</title>
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        .schedule-section { padding: 40px 0; }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .schedule-table th {
+            background-color: #333;
+            color: #fff;
+        }
+        .schedule-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        .time-slot {
+            display: inline-block;
+            background: #f39c12;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-right: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        .time-slot:hover { background: #d35400; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">POLY CINEMA</div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="schedule.html" class="active">Lịch chiếu</a></li> <li><a href="booking.html">Đặt vé</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="schedule-section container">
+            <h2 data-aos="fade-right">Lịch Chiếu Phim Hôm Nay</h2>
+            <p data-aos="fade-right" data-aos-delay="100">Chọn khung giờ phù hợp để thưởng thức các siêu phẩm.</p>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr data-aos="fade-down">
+                        <th>Phim</th>
+                        <th>Thời lượng</th>
+                        <th>Giờ chiếu (2D / 3D)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-aos="fade-up" data-aos-delay="100">
+                        <td><strong>Người Nhện: Trở về</strong><br><small>Hành động, Phiêu lưu</small></td>
+                        <td>120 phút</td>
+                        <td>
+                            <a href="booking.html" class="time-slot">09:00</a>
+                            <a href="booking.html" class="time-slot">14:30</a>
+                            <a href="booking.html" class="time-slot">19:00</a>
+                            <a href="booking.html" class="time-slot">21:15</a>
+                        </td>
+                    </tr>
+
+                    <tr data-aos="fade-up" data-aos-delay="200">
+                        <td><strong>Vùng Đất Linh Hồn</strong><br><small>Hoạt hình, Gia đình</small></td>
+                        <td>105 phút</td>
+                        <td>
+                            <a href="booking.html" class="time-slot">10:00</a>
+                            <a href="booking.html" class="time-slot">16:45</a>
+                            <a href="booking.html" class="time-slot">20:30</a>
+                        </td>
+                    </tr>
+
+                    <tr data-aos="fade-up" data-aos-delay="300">
+                        <td><strong>Dune: Hành Tinh Cát</strong><br><small>Viễn tưởng</small></td>
+                        <td>155 phút</td>
+                        <td>
+                            <a href="booking.html" class="time-slot">11:30</a>
+                            <a href="booking.html" class="time-slot">15:00</a>
+                            <a href="booking.html" class="time-slot">18:45</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="container" style="margin-top: 40px; margin-bottom: 40px;">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="flex: 1;" data-aos="zoom-in-right">
+                    <h3>Quy định tại rạp</h3>
+                    <ul>
+                        <li>Không mang thức ăn bên ngoài vào rạp.</li>
+                        <li>Tắt chuông điện thoại khi xem phim.</li>
+                        <li>Trẻ em dưới 13 tuổi cần người lớn đi kèm (phim C13).</li>
+                    </ul>
+                </div>
+                <div style="flex: 1;" data-aos="zoom-in-left">
+                    <h3>Khuyến mãi</h3>
+                    <p>Giảm 50% giá vé cho học sinh, sinh viên vào ngày thứ 4 hàng tuần.</p>
+                    <p>Thành viên U22 giá vé chỉ 45k.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cinema Poly. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

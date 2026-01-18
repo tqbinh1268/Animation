@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Poly - Đặt vé</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">POLY CINEMA</div>
+            <nav>
+                <ul class="menu" id="nav-menu">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="schedule.html">Lịch chiếu</a></li>
+                    <li><a href="booking.html" class="active">Đặt vé</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-btn">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-header" data-aos="fade-down">
+                    <h2>ĐẶT VÉ ONLINE</h2>
+                    <p>Điền thông tin để nhận vé ngay lập tức.</p>
+                </div>
+
+                <div class="form-wrapper" data-aos="zoom-in" data-aos-delay="200">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên</label>
+                            <input type="text" id="fullname" placeholder="Nhập họ tên của bạn...">
+                            <small class="error-msg" id="error-name"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="text" id="phone" placeholder="Ví dụ: 0912345678">
+                            <small class="error-msg" id="error-phone"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="movieSelect">Chọn phim</label>
+                            <div class="custom-select">
+                                <select id="movieSelect">
+                                    <option value="spider">Người Nhện: Không Còn Nhà</option>
+                                    <option value="dune">Dune: Hành Tinh Cát</option>
+                                    <option value="avatar">Avatar: Dòng Chảy Của Nước</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ticketCount">Số lượng vé</label>
+                            <input type="number" id="ticketCount" min="1" max="10" value="1">
+                        </div>
+                        <button type="submit" class="btn-submit">Xác nhận đặt vé</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cinema Poly. Mini Project Lab 5.</p>
+    </footer>
+
+    <div id="ticketModal" class="modal-overlay">
+        <div class="ticket-wrapper">
+            <div class="ticket-left">
+                <div class="ticket-header">VÉ XEM PHIM / MOVIE TICKET</div>
+                <div class="ticket-body">
+                    <p class="t-label">PHIM / MOVIE</p>
+                    <h3 id="t-movie-name">Tên Phim Ở Đây</h3>
+                    <div class="row">
+                        <div class="col">
+                            <p class="t-label">KHÁCH HÀNG / CLIENT</p>
+                            <strong id="t-customer">Nguyễn Văn A</strong>
+                        </div>
+                        <div class="col">
+                            <p class="t-label">SĐT / PHONE</p>
+                            <strong id="t-phone">0912345678</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="t-label">SỐ LƯỢNG / QTY</p>
+                            <strong id="t-qty">01</strong>
+                        </div>
+                        <div class="col">
+                            <p class="t-label">NGÀY ĐẶT / DATE</p>
+                            <strong id="t-date">--/--</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="notch notch-top"></div>
+                <div class="notch notch-bottom"></div>
+            </div>
+
+            <div class="ticket-right">
+                <div id="qrcode-container" class="barcode"></div>
+                
+                <p class="ticket-number">ID: <span id="t-id">123456</span></p>
+                <button id="closeTicketBtn" class="btn-home">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
