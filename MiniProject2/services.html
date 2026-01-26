@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProject2 - Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Header (Copy from index) -->
+    <header class="header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">Mini<span>Project2</span></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Dịch Vụ Của Chúng Tôi</h1>
+        </section>
+
+        <!-- BÀI 2: CARD HOVER 3D / FLIP -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-3">
+                    <!-- Card 1: Flip Effect -->
+                    <div class="flip-card" data-aos="fade-up">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-code fa-3x"></i>
+                                <h3>Web Development</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Web Development</h3>
+                                <p>Xây dựng website hiện đại, chuẩn SEO và tốc độ cao.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Flip Effect -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-paint-brush fa-3x"></i>
+                                <h3>UI/UX Design</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>UI/UX Design</h3>
+                                <p>Thiết kế giao diện người dùng trực quan và đẹp mắt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Flip Effect -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-mobile-alt fa-3x"></i>
+                                <h3>Mobile Apps</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Mobile Apps</h3>
+                                <p>Phát triển ứng dụng đa nền tảng iOS và Android.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÀI 5: TABS / ACCORDION -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Quy Trình Làm Việc</h2>
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="tab1">1. Khảo sát</button>
+                        <button class="tab-btn" data-tab="tab2">2. Thiết kế</button>
+                        <button class="tab-btn" data-tab="tab3">3. Lập trình</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div id="tab1" class="tab-pane active">Chúng tôi lắng nghe yêu cầu và phân tích thị trường.</div>
+                        <div id="tab2" class="tab-pane">Lên ý tưởng, wireframe và thiết kế UI chi tiết.</div>
+                        <div id="tab3" class="tab-pane">Code sạch, tối ưu hiệu năng và kiểm thử kỹ lưỡng.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><p>&copy; 2026 MiniProject2.</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

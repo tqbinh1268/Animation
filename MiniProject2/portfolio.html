@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProject2 - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">Mini<span>Project2</span></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BÀI 3: PARALLAX SCROLL -->
+        <section class="parallax-hero">
+            <div class="parallax-content" data-aos="zoom-in">
+                <h1>Dự Án Tiêu Biểu</h1>
+                <p>Khám phá những tác phẩm nghệ thuật số của chúng tôi</p>
+            </div>
+        </section>
+
+        <!-- BÀI 5: MASONRY GRID & BÀI 3: REVEAL GALLERY -->
+        <section class="section">
+            <div class="container">
+                <div class="masonry-grid">
+                    <div class="masonry-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1515169067750-d51a73b50ac7?w=500&q=80" alt="Project 1">
+                        <div class="overlay"><h4>Project Alpha</h4></div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&q=80" alt="Project 2" style="height: 300px; object-fit: cover;">
+                        <div class="overlay"><h4>Project Beta</h4></div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?w=500&q=80" alt="Project 3">
+                        <div class="overlay"><h4>Project Gamma</h4></div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1572177812156-58036aae439c?w=500&q=80" alt="Project 4" style="height: 400px; object-fit: cover;">
+                        <div class="overlay"><h4>Project Delta</h4></div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1535378437327-b7149b379c2a?w=500&q=80" alt="Project 5">
+                        <div class="overlay"><h4>Project Epsilon</h4></div>
+                    </div>
+                    <div class="masonry-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=500&q=80" alt="Project 6">
+                        <div class="overlay"><h4>Project Zeta</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><p>&copy; 2026 MiniProject2.</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

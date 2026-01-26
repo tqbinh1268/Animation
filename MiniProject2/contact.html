@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProject2 - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">Mini<span>Project2</span></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Liên Hệ</h2>
+                        <p>Để lại thông tin, chúng tôi sẽ gọi lại ngay.</p>
+                    </div>
+                    
+                    <!-- BÀI 4: FORM TƯƠNG TÁC -->
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <!-- Floating Label -->
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-input" placeholder=" " required>
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <span class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-input" placeholder=" " required>
+                            <label for="email" class="form-label">Email</label>
+                            <span class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" class="form-input" placeholder=" " rows="4" required></textarea>
+                            <label for="message" class="form-label">Lời nhắn</label>
+                            <span class="error-msg"></span>
+                        </div>
+
+                        <!-- Loading Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Gửi Tin Nhắn</span>
+                            <span class="loader"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BÀI 4: TOAST NOTIFICATION -->
+    <div id="toast-container"></div>
+
+    <footer class="footer"><p>&copy; 2026 MiniProject2.</p></footer>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

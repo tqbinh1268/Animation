@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProject2 - Home</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Libs CSS (Bài 3, Bài 5) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- BÀI 1: HEADER STICKY & MENU -->
+    <header class="header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">Mini<span>Project2</span></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- BÀI 2: HERO ANIMATION (GSAP/Keyframes) -->
+        <section class="hero">
+            <div class="hero-bg-layer"></div>
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Creative <br> <span class="highlight">Digital</span> Agency</h1>
+                    <p class="hero-desc">Chúng tôi tạo ra trải nghiệm kỹ thuật số đẳng cấp với animation mượt mà và thiết kế hiện đại.</p>
+                    <!-- BÀI 2: BUTTON ANIMATION -->
+                    <a href="contact.html" class="btn btn-primary glow-effect">Bắt đầu ngay</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Hero Art" class="floating-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- BÀI 5: TIMELINE -->
+        <section class="section timeline-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Hành Trình Phát Triển</h2>
+                <div class="timeline">
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="content">
+                            <h3>2020</h3>
+                            <p>Thành lập công ty với 3 thành viên.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="content">
+                            <h3>2022</h3>
+                            <p>Mở rộng quy mô lên 50 nhân sự và đạt giải thưởng Design Award.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="content">
+                            <h3>2024</h3>
+                            <p>Ra mắt MiniProject2 với công nghệ Animation tiên tiến.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BÀI 5: SLIDER CAROUSEL (SwiperJS) -->
+        <section class="section testimonial-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Khách Hàng Nói Gì</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"Thiết kế quá đẹp và mượt mà!"</p>
+                                <h4>Nguyễn Văn A</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"Animation rất ấn tượng, UX tuyệt vời."</p>
+                                <h4>Trần Thị B</h4>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p>"Dịch vụ chuyên nghiệp, code sạch."</p>
+                                <h4>Lê Văn C</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 MiniProject2. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
